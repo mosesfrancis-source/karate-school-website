@@ -45,11 +45,6 @@ public class Student : User, IAttendanceTrackable, IPayable, IAnnouncementObserv
         string? guardianEmail = null)
         : base(studentId, firstName, lastName, email, password, "Student")
     {
-        if (studentId <= 0)
-        {
-            throw new ArgumentException("Student ID must be greater than zero.", nameof(studentId));
-        }
-
         if (dateOfBirth.Date >= DateTime.Now.Date)
         {
             throw new ArgumentException("Date of birth must be a real date in the past.", nameof(dateOfBirth));
