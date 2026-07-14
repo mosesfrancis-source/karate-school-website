@@ -7,7 +7,7 @@ namespace KarateSchoolSystem.Patterns;
 /// </summary>
 public class CreditCardPaymentStrategy : IPaymentStrategy
 {
-    private const decimal FeeRate = 0.029m;
+    private static readonly decimal FeeRate = 0.029m;
 
     public string StrategyName => "Credit Card";
 

@@ -75,6 +75,14 @@ public class StudentTests
     }
 
     [TestMethod]
+    public void Constructor_PasswordNullOrWhitespace_ThrowsArgumentException()
+    {
+        Assert.ThrowsExactly<ArgumentException>(() => CreateAdultStudent(password: null!));
+        Assert.ThrowsExactly<ArgumentException>(() => CreateAdultStudent(password: ""));
+        Assert.ThrowsExactly<ArgumentException>(() => CreateAdultStudent(password: "   "));
+    }
+
+    [TestMethod]
     public void Constructor_PasswordExactlyEightChars_Succeeds()
     {
         var student = CreateAdultStudent(password: "eightchr");

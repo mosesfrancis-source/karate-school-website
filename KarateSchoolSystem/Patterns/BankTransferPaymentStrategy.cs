@@ -7,7 +7,7 @@ namespace KarateSchoolSystem.Patterns;
 /// </summary>
 public class BankTransferPaymentStrategy : IPaymentStrategy
 {
-    private const decimal MinimumAmount = 10m;
+    private static readonly decimal MinimumAmount = 10m;
 
     public string StrategyName => "Bank Transfer";
 
